@@ -16,7 +16,6 @@ Users should be able to view statistics and averages of their ascents.
 Project board: https://github.com/users/ferminhg/projects/1/views/1 
 
 ## 🚀 Environment Setup
-TBD 
 
 ### 🐳 Needed tools
 TBD
@@ -25,7 +24,9 @@ TBD
 TBD
 
 ### 🔥 Application execution
-TBD 
+
+- 🌐 Web-app: [README](/web-app/README.md)
+- 🖥️ Backend: [README](/be/README.md)
 
 ### ✅ Tests execution
 TBD
