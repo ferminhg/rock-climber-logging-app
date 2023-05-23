@@ -57,6 +57,9 @@ $ tree -L 4 web-app
 $ tree -L 4 be
 ```
 
+#### 📚 Resources
+- https://medium.com/@vsavkin/hexagonal-architecture-for-rails-developers-8b1fee64a613
+
 ## 📱 Monitoring
 
 The app is monitored using sentry.io:
