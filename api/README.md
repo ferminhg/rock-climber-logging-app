@@ -1,24 +1,31 @@
-# README
+# API-REST
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 🛠️ Environment configuration
 
-Things you may want to cover:
+### 🔥 Application execution
 
-* Ruby version
+You could install rails or run through `bin/rails`
 
-* System dependencies
 
-* Configuration
+Run the development server:
 
-* Database creation
+```bash
+bin/rails server
+```
 
-* Database initialization
+Open [http://localhost:3001](http://localhost:3001) with your browser to see the result.
 
-* How to run the test suite
+### ✅ Tests execution
 
-* Services (job queues, cache servers, search engines, etc.)
+```bash
+bundle exec rspec
+```
 
-* Deployment instructions
 
-* ...
+## How to create a new model
+
+```bash
+rails generate model User email:string
+rails db:migrate
+rails generate rspec:model user
+```
