@@ -1,5 +1,8 @@
+OK_MESSAGE = "ok"
+
 class ApplicationController < ActionController::API
-    def healthCheck
-        render json: { status: "ok" }
+
+    def health_check
+        render json: { status: OK_MESSAGE }
     end
 end
