@@ -29,8 +29,8 @@ TBD
 
 ### 🔥 Application execution
 
-- 🌐 Web-app: [README](/web-app/README.md)
-- 🖥️ API-REST: [README](/api/README.md)
+- 🦋 Web-app: [README](/web-app/README.md)
+- 🚂 API-REST: [README](/api/README.md)
 
 ### ✅ Tests execution
 TBD
@@ -70,3 +70,10 @@ $ tree -L 4 be
 The app is monitored using sentry.io:
 - https://sentry.io/organizations/ferminhg/XY
 - https://sentry.io/organizations/ferminhg/ZY
+
+
+# 📓 Changelog
+
+**2023-05-25**
+- Doing the refinement of https://github.com/ferminhg/rock-climber-logging-app/issues/4 I decided to know use activeRecord model on Rails and try to use the repository pattern. The goals is create layers between domain models and infra persistence. 
+
