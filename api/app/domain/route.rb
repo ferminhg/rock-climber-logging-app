@@ -15,7 +15,7 @@ class Route
     "Route #{@id} has #{@difficult_level} difficult level, #{@climbing_time} climbing time and #{@comments} comments"
   end
 
-  def to_json
+  def to_json(*_args)
     {
       id: @id,
       difficult_level: @difficult_level,
