@@ -29,8 +29,8 @@ TBD
 
 ### 🔥 Application execution
 
-- 🌐 Web-app: [README](/web-app/README.md)
-- 🖥️ API-REST: [README](/api/README.md)
+- 🦋 Web-app: [README](/web-app/README.md)
+- 🚂 API-REST: [README](/api/README.md)
 
 ### ✅ Tests execution
 TBD
