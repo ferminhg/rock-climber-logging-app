@@ -18,7 +18,11 @@ Project board: https://github.com/users/ferminhg/projects/1/views/1
 ## 🚀 Environment Setup
 
 ### 🐳 Needed tools
-TBD
+
+- Ruby: https://www.ruby-lang.org/en/documentation/installation/
+- Rails: https://guides.rubyonrails.org/v5.0/getting_started.html
+- node: https://nodejs.org/en/download
+- npm: https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
 
 ### 🛠️ Environment configuration
 TBD
