@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require_relative 'difficult_level'
+
 class RouteError < StandardError
   ERR_MSG_INVALID_UUID = 'Invalid UUID'
   ERR_MSG_INVALID_CLIMBING_TIME = 'Invalid climbing time'
@@ -31,7 +33,7 @@ class Route
     raise RouteError, RouteError::ERR_MSG_INVALID_CLIMBING_TIME unless valid_climbing_time?(climbing_time)
 
     @id = id
-    @difficult_level = difficult_level
+    @difficult_level = DifficultLevel.from(difficult_level)
     @climbing_time = climbing_time
     @comments = comments
   end
