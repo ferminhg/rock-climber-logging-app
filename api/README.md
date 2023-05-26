@@ -13,7 +13,15 @@ Run the development server:
 bin/rails server
 ```
 
-Open [http://localhost:3001](http://localhost:3001) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+
+### 🐳 Docker execution
+
+```bash
+docker-compose up --build
+docker-compose run web rails db:create db:migrate
+```
 
 ### ✅ Tests execution
 
