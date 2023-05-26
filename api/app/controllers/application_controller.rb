@@ -1,12 +1,16 @@
 # frozen_string_literal: true
 
-# ApplicationController is the superclass of all controller classes in the application.
-# It's a good place to put methods that should be available across multiple controllers.
-
-OK_MESSAGE = 'ok'
-
 class ApplicationController < ActionController::API
+  OK_MESSAGE = 'ok'
+
   def health_check
     render json: { status: OK_MESSAGE }
+  end
+
+  def routes
+    repository = InMemoryRouteRepository.new([]) # to be replaced with a real repository
+    routes = SearchAllRoutesQueryHandler.new(repository).run
+
+    render json: { data: routes }
   end
 end
