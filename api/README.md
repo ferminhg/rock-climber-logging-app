@@ -15,6 +15,12 @@ bin/rails server
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+You could test the API with [Postman](https://www.postman.com/)
+or using curl:
+```bash
+curl --location 'http://127.0.0.1:3000/routes'
+curl --location --request POST 'http://127.0.0.1:3000/route/create?climbing_time=1234&difficult_level=V&comments=wopwop'
+```
 
 ### 🐳 Docker execution
 
