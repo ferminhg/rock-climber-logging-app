@@ -65,6 +65,12 @@ $ tree -L 4 be
 #### 📚 Resources
 - https://medium.com/@vsavkin/hexagonal-architecture-for-rails-developers-8b1fee64a613
 
+💡 Some inspiration:
+
+- https://github.com/CodelyTV/typescript-ddd-example
+- https://github.com/CodelyTV/typescript-ddd-skeleton
+
+
 ## 📱 Monitoring
 
 The app is monitored using sentry.io:
