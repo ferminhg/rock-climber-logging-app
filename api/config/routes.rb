@@ -5,4 +5,5 @@ Rails.application.routes.draw do
 
   get '/health_check', to: 'application#health_check'
   get '/routes', to: 'application#routes'
+  post '/route/create', to: 'application#create_route'
 end

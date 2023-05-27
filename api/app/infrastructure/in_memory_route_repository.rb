@@ -9,6 +9,10 @@ class InMemoryRouteRepository
     @routes
   end
 
+  def save(route)
+    @routes << route
+  end
+
   def reset_state
     @routes = []
   end

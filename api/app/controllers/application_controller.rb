@@ -13,4 +13,14 @@ class ApplicationController < ActionController::API
 
     render json: { data: routes }
   end
+
+  def create_route
+    repository = InMemoryRouteRepository.new([]) # to be replaced with a real repository
+    handler = CreateRouteHandler.new(repository)
+    route = handler.run(params[:difficult_level], params[:climbing_time].to_i, params[:comments])
+
+    render json: { data: route }
+  rescue RouteError => e
+    render json: { error: e.message }, status: :bad_request
+  end
 end

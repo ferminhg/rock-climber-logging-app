@@ -1,11 +1,7 @@
 # frozen_string_literal: true
 
 require_relative 'difficult_level'
-
-class RouteError < StandardError
-  ERR_MSG_INVALID_UUID = 'Invalid UUID'
-  ERR_MSG_INVALID_CLIMBING_TIME = 'Invalid climbing time'
-end
+require_relative 'route_error'
 
 # Route it's a class to represent a climbing route
 class Route
@@ -32,13 +28,15 @@ class Route
     raise RouteError, RouteError::ERR_MSG_INVALID_UUID unless valid_id?(id)
     raise RouteError, RouteError::ERR_MSG_INVALID_CLIMBING_TIME unless valid_climbing_time?(climbing_time)
 
-    @id = id
     @difficult_level = DifficultLevel.from(difficult_level)
+    @id = id
     @climbing_time = climbing_time
     @comments = comments
   end
 
   def valid_climbing_time?(climbing_time)
+    return false if climbing_time.nil?
+
     climbing_time.positive? && climbing_time <= Time.now.to_i
   end
 

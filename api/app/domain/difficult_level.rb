@@ -1,10 +1,14 @@
 # frozen_string_literal: true
 
+require_relative 'route_error'
+
 class DifficultLevel
   LEVELS = %w[V V+ 6a 6a+ 6b 6b+ 6c 6c+ 7a].freeze
   UNKNOWN = 'UNKNOWN'
 
   def self.from(str)
+    raise RouteError, RouteError::ERR_MSG_INVALID_DIFFICULT_LEVEL if str.nil?
+
     level = LEVELS.find { |l| l.downcase == str.downcase }
     level || UNKNOWN
   end
