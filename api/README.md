@@ -39,7 +39,9 @@ bundle exec rspec
 ## How to create a new model
 
 ```bash
-rails generate model User email:string
+rails generate model RouteModel route_id:string difficult_level:string climbing_time:datetime comments:string0
 rails db:migrate
-rails generate rspec:model user
+rails db:seed
 ```
+
+
