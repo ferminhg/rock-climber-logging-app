@@ -16,7 +16,11 @@ class ApplicationController < ActionController::API
 
   def create_route
     handler = CreateRouteHandler.new(@repository)
-    route = handler.run(params[:difficult_level], params[:climbing_time].to_i, params[:comments])
+    printf("params: #{params}")
+
+    sanitized_params = ParamsRouteSanitizer::sanitize(params)
+    route = handler.run(sanitized_params)
+
     render json: { data: route }
   rescue RouteError => e
     render json: { error: e.message }, status: :bad_request
