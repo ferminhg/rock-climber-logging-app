@@ -44,4 +44,10 @@ rails db:migrate
 rails db:seed
 ```
 
+## Observability
 
+Sentry is used to track errors and performance issues.
+
+Dashboard:
+https://muka.sentry.io/issues/?project=4505269126823936&referrer=sidebar
+![sentry.png](doc/assets/sentry.png)
