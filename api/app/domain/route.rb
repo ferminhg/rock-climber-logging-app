@@ -9,6 +9,12 @@ class Route
     new(SecureRandom.uuid, difficult_level, climbing_time, comments)
   end
 
+  def self.from_model(model)
+    raise RouteError, RouteError::ERR_MSG_INVALID_MODEL unless model.is_a?(Array) && model.length == 4
+
+    new(model[0], model[1], model[2], model[3])
+  end
+
   def to_s
     "Route #{@id} has #{@difficult_level} difficult level, #{@climbing_time} climbing time and #{@comments} comments"
   end

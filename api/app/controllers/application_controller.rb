@@ -8,7 +8,9 @@ class ApplicationController < ActionController::API
   end
 
   def routes
-    repository = InMemoryRouteRepository.new([]) # to be replaced with a real repository
+    # repository = InMemoryRouteRepository.new([]) # to be replaced with a real repository
+    db = SQLite3::Database.new('./db/development.sqlite3')
+    repository = SqliteRouteRepository.new(db)
     routes = SearchAllRoutesQueryHandler.new(repository).run
 
     render json: { data: routes }

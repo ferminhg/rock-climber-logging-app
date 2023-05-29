@@ -10,10 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_29_185421) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_29_191822) do
   create_table "route_models", primary_key: "route_id", id: :string, force: :cascade do |t|
     t.string "difficult_level"
-    t.datetime "climbing_time"
+    t.integer "climbing_time"
     t.string "comments"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
