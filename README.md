@@ -5,15 +5,16 @@
 Climbing Route Registration and Tracking Application.
 An application that allows users to register and visualize the climbing routes they have completed. 
 
-Each route should have information such as:
-- location 
-- difficulty level
-- climbing time
-- comments. 
+Each route should have information such as: location, difficulty level, date climbed, comments. 
 
 Users should be able to view statistics and averages of their ascents.
 
 Project board: https://github.com/users/ferminhg/projects/1/views/1 
+
+### 🔥 Application README's
+
+- 🦋 Web-app (TS + Reactjs): [README](/web-app/README.md)
+- 🚂 API-REST (Ruby on Rails): [README](/api/README.md)
 
 ## 🚀 Environment Setup
 
@@ -24,16 +25,6 @@ Project board: https://github.com/users/ferminhg/projects/1/views/1
 - node: https://nodejs.org/en/download
 - npm: https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
 
-### 🛠️ Environment configuration
-TBD
-
-### 🔥 Application execution
-
-- 🦋 Web-app: [README](/web-app/README.md)
-- 🚂 API-REST: [README](/api/README.md)
-
-### ✅ Tests execution
-TBD
 
 ## 👩‍💻 Project explanation
 
