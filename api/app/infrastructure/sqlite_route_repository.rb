@@ -9,8 +9,14 @@ class SqliteRouteRepository
 
   def find_all
     @db.execute(SQL_FIND_ALL).map do |row|
-      printf("row: #{row}")
       Route.from_model(row)
     end
+  end
+
+  SQL_INSERT_ROUTE = 'INSERT INTO route_models (route_id, difficult_level, climbing_time, comments, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?)'
+
+  def save(route)
+    @db.execute(SQL_INSERT_ROUTE, route.id.to_s, route.difficult_level.to_s, route.climbing_time, route.comments,
+                Time.now.to_i, Time.now.to_i)
   end
 end

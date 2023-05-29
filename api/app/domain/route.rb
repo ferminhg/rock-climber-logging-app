@@ -5,6 +5,8 @@ require_relative 'route_error'
 
 # Route it's a class to represent a climbing route
 class Route
+  attr_reader :id, :difficult_level, :climbing_time, :comments
+
   def self.from(difficult_level, climbing_time, comments = '')
     new(SecureRandom.uuid, difficult_level, climbing_time, comments)
   end
