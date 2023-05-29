@@ -13,7 +13,10 @@ class SqliteRouteRepository
     end
   end
 
-  SQL_INSERT_ROUTE = 'INSERT INTO route_models (route_id, difficult_level, climbing_time, comments, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?)'
+  SQL_INSERT_ROUTE = <<~SQL.squish
+    INSERT INTO route_models (route_id, difficult_level, climbing_time, comments, created_at, updated_at)
+    VALUES (?, ?, ?, ?, ?, ?)
+  SQL
 
   def save(route)
     @db.execute(SQL_INSERT_ROUTE, route.id.to_s, route.difficult_level.to_s, route.climbing_time, route.comments,
