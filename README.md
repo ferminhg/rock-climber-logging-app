@@ -38,8 +38,7 @@ The application uses the following technologies:
   - Typescript
 - Backend:
   - RoR
-  - Postgres
-  - Redis
+  - SQLite
   - Docker
 
 ### 🎯 Hexagonal Architecture
