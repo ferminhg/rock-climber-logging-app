@@ -1,9 +1,12 @@
 import styles from '@/components/dashboard/dashboard.module.css'
-import {ClimbingTime} from "@/components/dashboard/ClimingTime";
 
-export function Dashboard({ repository }: { repository: any }) {
-    const isLoading = false
-    const repositoryData = repository.data
+import {ClimbingTime} from "@/components/dashboard/ClimingTime";
+import {RouteRepository} from "@/domain/RouteRepository";
+import {useEffect, useState} from "react";
+import {useRouteRepository} from "@/components/dashboard/useRouteRepository";
+
+export function Dashboard({ repository }: { repository: RouteRepository }) {
+    const {isLoading, repositoryData} = useRouteRepository(repository)
 
     return (
         <>
@@ -28,4 +31,3 @@ export function Dashboard({ repository }: { repository: any }) {
         </>
     )
 }
-
