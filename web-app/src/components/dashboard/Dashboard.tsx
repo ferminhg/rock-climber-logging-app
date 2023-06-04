@@ -1,4 +1,5 @@
-import styles from './dashboard.module.css'
+import styles from '@/components/dashboard/dashboard.module.css'
+import {ClimbingTime} from "@/components/dashboard/ClimingTime";
 
 export function Dashboard({ repository }: { repository: any }) {
     const isLoading = false
@@ -18,7 +19,7 @@ export function Dashboard({ repository }: { repository: any }) {
                     {repositoryData.map((route: any) => (
                         <div key={route.id} className={styles.widget}>
                             <span className={styles.difficult}>{route.difficult_level}</span>
-                            <span className={styles.time}>{ClimbingTime(route.climbing_time)}</span>
+                            <span className={styles.time}><ClimbingTime climbing_time={route.climbing_time}/></span>
                             <p className={styles.comments}>{route.comments}</p>
                         </div>
                     ))}
@@ -28,8 +29,3 @@ export function Dashboard({ repository }: { repository: any }) {
     )
 }
 
-function ClimbingTime(climbing_time: any) {
-    const date = new Date(climbing_time * 1000);
-    return <span className={styles.time}>{date.toLocaleDateString()}</span>;
-
-}

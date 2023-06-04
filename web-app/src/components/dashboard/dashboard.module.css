@@ -139,22 +139,22 @@
   margin: 0.5rem;
 }
 
-
 .difficult {
   width: max-content;
   margin-bottom: 2%;
   font-weight: 800;
 }
+
 .time {
-  align-self: flex-end;
   margin-bottom: 2%;
 
   color:rgba(181,185,191, 1);
 }
 
-
 .comments {
   width: 100%;
   color: #ff7a18;
   font-weight: 400;
+  max-height: 200px;
+  overflow: auto;
 }

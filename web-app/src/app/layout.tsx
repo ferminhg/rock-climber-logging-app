@@ -1,5 +1,6 @@
 import { Inter } from 'next/font/google'
 import * as Sentry from "@sentry/nextjs";
+import {Header} from "@/components/layout/Header";
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -8,16 +9,14 @@ export const metadata = {
   description: 'Da best! 🤘 Rock Climber Login App 📈',
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({children,}: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <body className={inter.className}>
-      {children}
+          <Header />
+          {children}
       </body>
     </html>
   )
 }
+
