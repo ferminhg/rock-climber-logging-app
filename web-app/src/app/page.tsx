@@ -1,21 +1,6 @@
-import styles from './page.module.css'
 
-export default function Home() {
-  return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <h1>
-          🧗‍♀ Rocking with you
-        </h1>
-      </div>
+import {DashboardFactory} from "@/components/dashboard/DashboardFactory";
 
-      <div className={styles.grid}>
-        <div
-          className={styles.card}
-        >
-            👋 Build with ❤️
-        </div>
-      </div>
-    </main>
-  )
+export default function Home(): React.ReactElement {
+    return DashboardFactory.create()
 }

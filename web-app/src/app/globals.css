@@ -86,7 +86,7 @@ body {
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
+  color:  rgba(248,249,250);
   background: linear-gradient(
       to bottom,
       transparent,
@@ -98,10 +98,4 @@ body {
 a {
   color: inherit;
   text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
 }
