@@ -5,8 +5,8 @@ export default function Layout({ children }) {
     return (
         <>
             <Header />
-            <main>{children}</main>
-            wop wop®️
+            <div>{children}</div>
+            <footer>wop wop®️</footer>
         </>
     );
 }
