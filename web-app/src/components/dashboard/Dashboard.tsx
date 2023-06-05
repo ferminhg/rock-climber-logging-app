@@ -2,14 +2,19 @@ import styles from '@/components/dashboard/dashboard.module.css'
 
 import {ClimbingTime} from "@/components/dashboard/ClimingTime";
 import {RouteRepository} from "@/domain/RouteRepository";
-import {useEffect, useState} from "react";
 import {useRouteRepository} from "@/components/dashboard/useRouteRepository";
 
 export function Dashboard({ repository }: { repository: RouteRepository }) {
-    const {isLoading, repositoryData} = useRouteRepository(repository)
+    const {isLoading, repositoryData, error } = useRouteRepository(repository)
 
     return (
         <>
+
+            {error && (
+                <div className={styles.empty}>
+                    <span>Something went wrong 😡</span>
+                </div>
+            )}
             {isLoading && (
                 <section className={styles.container}>Loading ...</section>
             )}
