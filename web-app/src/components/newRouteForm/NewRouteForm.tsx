@@ -13,12 +13,14 @@ type FormData = {
 const API_URL = process.env.NEXT_PUBLIC_API_ROUTE_URL || 'http://localhost:8080';
 
 const convertToTimestamp = (dateStr: string) => {
-    const dateObj = new Date(dateStr);
+    const parts = dateStr.split("-").map((part) => parseInt(part, 10));
+    const dateObj = new Date(parts[0], parts[1] - 1, parts[2]);
     return dateObj.getTime() / 1000;
 };
 
 export const NewRouteForm: React.FC = () => {
     const { register, handleSubmit, formState: { errors } } = useForm<FormData>();
+
     const onSubmit = async (data: FormData) => {
         try {
             const { climbing_date, ...postData } = data;
@@ -28,7 +30,7 @@ export const NewRouteForm: React.FC = () => {
                 ...postData,
                 climbing_time: timestamp,
             });
-            console.log(response.data);
+            window.location.href = '/';
         } catch (error) {
             console.error(error);
         }
@@ -41,20 +43,25 @@ export const NewRouteForm: React.FC = () => {
             <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
                 <div className={styles.item}>
                     <label>
-                        Difficult level:
+                        Difficult level
                         <select {...register("difficult_level", { required: true })} className={styles.input}>
-                            <option value="">Seleccione</option>
+                            <option value="">Select difficult</option>
                             <option value="V">V</option>
                             <option value="V+">V+</option>
                             <option value="6a">6a</option>
-                            {/* Agrega más opciones según lo necesites */}
+                            <option value="6a+">6a+</option>
+                            <option value="6b">6b</option>
+                            <option value="6b+">6b+</option>
+                            <option value="6c">6c</option>
+                            <option value="6c+">6c+</option>
+                            <option value="7a">7a</option>
                         </select>
                     </label>
                     {errors.difficult_level && <p className={styles.error}>Este campo es obligatorio</p>}
                 </div>
                 <div className={styles.item}>
                     <label>
-                        Fecha:
+                        When did you climb it?
                         <input type="date" {...register("climbing_date", { required: true })} className={styles.input} max={today}/>
                     </label>
                     {errors.climbing_date && <p className={styles.error}>Este campo es obligatorio</p>}
@@ -62,15 +69,14 @@ export const NewRouteForm: React.FC = () => {
 
                 <div className={styles.item}>
                 <label>
-                    Comentario:
+                    Comments:
                     <textarea {...register("comments")} className={styles.input}/>
                 </label>
                 </div>
                 <div className={styles.item}>
-                    <input type="submit" value="Crear ruta" className={styles.input} />
+                    <input type="submit" value="Submit you route" className={styles.input} />
                 </div>
             </form>
         </div>
     );
 }
-
