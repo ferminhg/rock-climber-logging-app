@@ -10,7 +10,7 @@ export class ApiRouteRepository implements RouteRepository {
 
   async search(): Promise<Route[]> {
     try {
-      let response = await fetch(this.apiRoute);
+      let response = await fetch(`${this.apiRoute}/routes`);
 
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);

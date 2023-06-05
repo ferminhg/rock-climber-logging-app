@@ -6,7 +6,9 @@ import {ApiRouteRepository} from "@/infrastructure/ApiRouteRepository";
 
 const routes_data :typeof routes_responses = routes_responses
 const inMemoryRepository = new InMemoryRouteRepository(routes_data.data)
-const apiRepository = new ApiRouteRepository("http://localhost:3000/routes")
+
+const API_URL_ROUTE: string = process.env.NEXT_PUBLIC_API_ROUTE_URL || 'http://localhost:8080'
+const apiRepository = new ApiRouteRepository(API_URL_ROUTE)
 
 export class DashboardFactory {
     static create(): React.ReactElement {
