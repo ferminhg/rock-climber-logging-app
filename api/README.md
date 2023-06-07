@@ -35,7 +35,6 @@ docker-compose run web rails db:create db:migrate
 bundle exec rspec
 ```
 
-
 ## How to create a new model
 
 ```bash
@@ -43,6 +42,16 @@ rails generate model RouteModel route_id:string difficult_level:string climbing_
 rails db:migrate
 rails db:seed
 ```
+
+## Events Driven Architecture
+
+I started to use [Event Driven Architecture](https://en.wikipedia.org/wiki/Event-driven_architecture) to decouple use cases and make it more scalable.
+I use [Rails Event Store](https://railseventstore.org/) to implement it.
+
+### 📦 Events
+
+- `RouteCreatedEvent`: It is triggered when a new route is created. 
+
 
 ## Observability
 
