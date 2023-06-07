@@ -5,11 +5,12 @@ class CreateRouteHandler
     @repository = repository
   end
 
-  def run(params)
-    difficult_level = params[:difficult_level]
-    climbing_time = params[:climbing_time]
-    comments = params[:comments]
-    route = Route.from(difficult_level, climbing_time, comments)
+  def run(create_route_dto)
+    route = Route.from(
+      create_route_dto.difficult_level,
+      create_route_dto.timestamp,
+      create_route_dto.comments
+    )
     @repository.save(route)
     route
   end

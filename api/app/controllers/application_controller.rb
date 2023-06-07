@@ -17,7 +17,7 @@ class ApplicationController < ActionController::API
   def create_route
     handler = CreateRouteHandler.new(@repository)
     sanitized_params = ParamsRouteSanitizer.sanitize(params)
-    route = handler.run(sanitized_params)
+    route = handler.run(CreateRouteDTO.from_params(sanitized_params))
     render json: { data: route }
   rescue RouteError => e
     render json: { error: e.message }, status: :bad_request

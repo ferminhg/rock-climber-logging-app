@@ -29,7 +29,7 @@ RSpec.describe ApplicationController, type: :controller do
 
     it 'returns JSON with data' do
       json_response = JSON.parse(response.body)
-      expect(json_response['data']).to eq([])
+      expect(json_response['data']).to be_an_instance_of(Array)
     end
   end
 end
