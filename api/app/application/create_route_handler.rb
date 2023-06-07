@@ -13,6 +13,7 @@ class CreateRouteHandler
       create_route_dto.comments
     )
     @repository.save(route)
+    @event_store.publish(RouteCreatedEvent.from(route), stream_name: "Route$#{route.id}")
     route
   end
 end
