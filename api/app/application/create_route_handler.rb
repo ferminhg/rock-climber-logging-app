@@ -9,7 +9,7 @@ class CreateRouteHandler
   def run(create_route_dto)
     route = Route.from(
       create_route_dto.difficult_level,
-      create_route_dto.timestamp,
+      create_route_dto.climbing_time,
       create_route_dto.comments
     )
     @repository.save(route)

@@ -15,7 +15,7 @@ class CreateRouteDTO
 
   def initialize(difficult_level, climbing_time, comments)
     @difficult_level = difficult_level
-    @timestamp = climbing_time
+    @climbing_time = climbing_time
     @comments = comments
   end
 end
