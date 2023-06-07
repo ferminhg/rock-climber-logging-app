@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+require_relative '../domain/create_route_dto'
 
 class ApplicationController < ActionController::API
   OK_MESSAGE = 'ok'
