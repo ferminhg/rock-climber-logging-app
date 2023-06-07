@@ -7,6 +7,7 @@ require_relative '../../spec/domain/create_route_dto_mother'
 RSpec.describe 'CreateRouteHandler' do
   before do
     @repository = InMemoryRouteRepository.new
+    @event_store = InMemoryEventStore.new
   end
 
   context 'when run with happy path' do
@@ -14,7 +15,7 @@ RSpec.describe 'CreateRouteHandler' do
       @repository.reset_state
     end
 
-    let(:handler) { CreateRouteHandler.new(@repository) }
+    let(:handler) { CreateRouteHandler.new(@repository, @event_store) }
 
     it 'then is saved on repository' do
       dto = CreateRouteDTOMother.create

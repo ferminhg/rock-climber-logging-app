@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 
 class CreateRouteHandler
-  def initialize(repository)
+  def initialize(repository, event_store)
     @repository = repository
+    @event_store = event_store
   end
 
   def run(create_route_dto)

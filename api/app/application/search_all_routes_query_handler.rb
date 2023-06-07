@@ -6,6 +6,7 @@ class SearchAllRoutesQueryHandler
   end
 
   def run
+    print(@event_store)
     @repository.find_all
   end
 end
