@@ -26,7 +26,8 @@ class ApplicationController < ActionController::API
   end
 
   def ask_trainer_tip
-    handler = AskTrainerTip.new
+    trainer = InMemoryTrainer.create
+    handler = AskTrainerTip.new trainer
     tip = handler.run
     render json: { data: tip }
   end

@@ -2,7 +2,7 @@
 
 class Tip
   def self.from(tip)
-    new.Tip(tip)
+    new(tip)
   end
 
   def to_json(*_args)
@@ -13,7 +13,7 @@ class Tip
 
   private
 
-  def initialize
-    @tip = 'Tip: Use the force'
+  def initialize(tip = 'Use the force 🫵')
+    @tip = tip
   end
 end
