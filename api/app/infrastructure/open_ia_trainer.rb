@@ -24,8 +24,8 @@ class OpenIATrainer
     raise 'No response from OpenAI' if response['choices'].empty? || response['choices'][0]['text'].empty?
 
     tip = response['choices'][0]['text']
-    tip.remove!("\n")
-    tip.remove!('1. ')
+    tip.gsub!("\n", '')
+    tip.gsub!('1. ', '')
 
     "#{tip} - #{role}"
   end
@@ -33,5 +33,4 @@ class OpenIATrainer
   def initialize
     @client = OpenAI::Client.new
   end
-
 end
