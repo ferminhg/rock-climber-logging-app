@@ -1,13 +1,9 @@
 # frozen_string_literal: true
 
 class OpenIATrainer
-  FUN_ROLES = ['Yoda', 'Master Migalli', 'Ninja Turtle Rat', 'Dumbledore'].freeze
+  FUN_ROLES = ['Yoda', 'Master Miyagi', 'Splinter', 'Dumbledore'].freeze
   PROMT = 'I am a rock climbing coach and I need tips to improve my climbing and stay motivated.' \
           ' You will act as a fun role:'
-
-  def initialize
-    @client = OpenAI::Client.new
-  end
 
   def ask
     role = OpenIATrainer::FUN_ROLES.sample
@@ -33,4 +29,9 @@ class OpenIATrainer
 
     "#{tip} - #{role}"
   end
+
+  def initialize
+    @client = OpenAI::Client.new
+  end
+
 end
