@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require_relative '../domain/create_route_dto'
 
 class ApplicationController < ActionController::API
@@ -27,7 +28,7 @@ class ApplicationController < ActionController::API
   def ask_trainer_tip
     handler = AskTrainerTip.new
     tip = handler.run
-    render json: { data: tip}
+    render json: { data: tip }
   end
 
   private
