@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require_relative '../domain/create_route_dto'
+require_relative '../infrastructure/open_ia_trainer'
 
 class ApplicationController < ActionController::API
   OK_MESSAGE = 'ok'
@@ -26,7 +27,8 @@ class ApplicationController < ActionController::API
   end
 
   def ask_trainer_tip
-    trainer = InMemoryTrainer.create
+    # trainer = InMemoryTrainer.create
+    trainer = OpenIATrainer.new
     handler = AskTrainerTip.new trainer
     tip = handler.run
     render json: { data: tip }
