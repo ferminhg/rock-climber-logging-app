@@ -22,6 +22,13 @@ curl --location 'http://127.0.0.1:3000/routes'
 curl --location --request POST 'http://127.0.0.1:3000/route/create?climbing_time=1234&difficult_level=V&comments=wopwop'
 ```
 
+### Endpoints
+
+- `GET /routes`: Get all routes
+- `POST /route/create`: Create a new route
+- `GET /ask_tip`: Get a tip form [OpenIA API](https://platform.openai.com/overview)
+
+
 ### 🐳 Docker execution
 
 ```bash
