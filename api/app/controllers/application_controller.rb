@@ -24,6 +24,12 @@ class ApplicationController < ActionController::API
     render json: { error: e.message }, status: :bad_request
   end
 
+  def ask_trainer_tip
+    handler = AskTrainerTip.new
+    tip = handler.run
+    render json: { data: tip}
+  end
+
   private
 
   def initialize_infrastructure

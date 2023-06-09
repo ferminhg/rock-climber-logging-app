@@ -32,4 +32,20 @@ RSpec.describe ApplicationController, type: :controller do
       expect(json_response['data']).to be_an_instance_of(Array)
     end
   end
+
+  describe 'GET #ask_tip' do
+    before do
+      get :ask_trainer_tip
+    end
+
+    it 'returns HTTP status 200' do
+      expect(response).to have_http_status(200)
+    end
+
+    it 'returns JSON with data' do
+      json_response = JSON.parse(response.body)
+      expect(json_response['data']).to have_key('tip')
+    end
+
+  end
 end

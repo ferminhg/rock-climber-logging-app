@@ -5,5 +5,6 @@ Rails.application.routes.draw do
 
   get '/health_check', to: 'application#health_check'
   get '/routes', to: 'application#routes'
+  get '/ask_tip', to: 'application#ask_trainer_tip'
   post '/route/create', to: 'application#create_route'
 end
