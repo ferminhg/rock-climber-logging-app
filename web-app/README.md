@@ -8,6 +8,13 @@ Install packages:
 pnpm install
 ```
 
+This app uses [pnpm](https://pnpm.io/) as package manager.
+
+For the UI it uses Material UI.
+
+
+```bash
+
 ### 🔥 Application execution
 
 Run the development server:
