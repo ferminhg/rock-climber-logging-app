@@ -1,15 +1,22 @@
-import styles from './header.module.css';
-import Link from "next/link";
+import {AppBar, Container} from "@mui/material";
+import {makeStyles} from "@mui/styles";
+
+import {ResponsiveAppBar} from "@/components/layout/ResponsiveAppBar";
+
+const useStyles = makeStyles((theme) => ({
+    abRoot: {
+        backgroundColor: "#3C6E71"
+    },
+}));
 
 export function Header() {
+    const classes = useStyles();
+
     return (
-        <header className={styles.header}>
-            <Link href="/">
-                <h1 className={styles.item}>You Rock 🤘 Climber 🧗‍</h1>
-            </Link>
-            <Link href="/route/new" className={styles.item}>
-                <button>➕ Add route</button>
-            </Link>
-        </header>
+        <AppBar position="static" classes={{ root: classes.abRoot}}>
+            <Container maxWidth="xl">
+                <ResponsiveAppBar />
+            </Container>
+        </AppBar>
     )
 }
