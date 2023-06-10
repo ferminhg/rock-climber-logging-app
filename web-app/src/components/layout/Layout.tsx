@@ -1,4 +1,5 @@
 import {Header} from "@/components/layout/Header";
+import {Footer} from "@/components/layout/Footer";
 
 // @ts-ignore
 export default function Layout({ children }) {
@@ -6,7 +7,7 @@ export default function Layout({ children }) {
         <>
             <Header />
             <div>{children}</div>
-            <footer>wop wop®️</footer>
+            <Footer />
         </>
     );
 }
