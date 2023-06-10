@@ -9,7 +9,6 @@ export function Dashboard({ repository }: { repository: RouteRepository }) {
 
     return (
         <>
-
             {error && (
                 <div className={styles.empty}>
                     <span>Something went wrong 😡</span>

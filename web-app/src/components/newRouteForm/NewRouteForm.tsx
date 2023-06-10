@@ -2,7 +2,8 @@ import React from 'react';
 import axios from 'axios';
 import { useForm } from 'react-hook-form';
 
-import styles from './newRouteForm.module.css';
+import {Container, FormControl, InputLabel, MenuItem, Select, TextField, Typography} from "@mui/material";
+import Button from "@mui/material/Button";
 
 type FormData = {
     difficult_level: string;
@@ -39,44 +40,38 @@ export const NewRouteForm: React.FC = () => {
     const today = new Date().toISOString().split('T')[0];
 
     return (
-        <div className={styles.container}>
-            <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
-                <div className={styles.item}>
-                    <label>
-                        Difficult level
-                        <select {...register("difficult_level", { required: true })} className={styles.input}>
-                            <option value="">Select difficult</option>
-                            <option value="V">V</option>
-                            <option value="V+">V+</option>
-                            <option value="6a">6a</option>
-                            <option value="6a+">6a+</option>
-                            <option value="6b">6b</option>
-                            <option value="6b+">6b+</option>
-                            <option value="6c">6c</option>
-                            <option value="6c+">6c+</option>
-                            <option value="7a">7a</option>
-                        </select>
-                    </label>
-                    {errors.difficult_level && <p className={styles.error}>Este campo es obligatorio</p>}
-                </div>
-                <div className={styles.item}>
-                    <label>
-                        When did you climb it?
-                        <input type="date" {...register("climbing_date", { required: true })} className={styles.input} max={today}/>
-                    </label>
-                    {errors.climbing_date && <p className={styles.error}>Este campo es obligatorio</p>}
-                </div>
-
-                <div className={styles.item}>
-                <label>
-                    Comments:
-                    <textarea {...register("comments")} className={styles.input}/>
-                </label>
-                </div>
-                <div className={styles.item}>
-                    <input type="submit" value="Submit you route" className={styles.input} />
-                </div>
-            </form>
-        </div>
+        <Container component="form" onSubmit={handleSubmit(onSubmit)}>
+            <FormControl fullWidth margin="normal">
+                <InputLabel id="difficult-level-label">Difficult level</InputLabel>
+                <Select  {...register("difficult_level", { required: true })}>
+                    <MenuItem value=""><em>Select difficult</em></MenuItem>
+                    <MenuItem value="V">V</MenuItem>
+                    <MenuItem value="V+">V+</MenuItem>
+                    <MenuItem value="6a">6a</MenuItem>
+                    <MenuItem value="6a+">6a+</MenuItem>
+                    <MenuItem value="6b">6b</MenuItem>
+                    <MenuItem value="6b+">6b+</MenuItem>
+                </Select>
+                {errors.difficult_level && <Typography color="error">This is mandatory.</Typography>}
+            </FormControl>
+            <FormControl fullWidth margin="normal">
+                <InputLabel shrink htmlFor="climbing_date">
+                    When did you climb it?
+                </InputLabel>
+                <TextField {...register("climbing_date", { required: true })}
+                           type="date"
+                           InputLabelProps={{ shrink: true }}
+                           inputProps={{ max: today }}
+                />
+                {errors.climbing_date && <Typography color="error">This is mandatory.</Typography>}
+            </FormControl>
+            <FormControl fullWidth margin="normal">
+                <InputLabel shrink htmlFor="comments">
+                    Comments
+                </InputLabel>
+                <TextField {...register("comments")} multiline rows={4} />
+            </FormControl>
+            <Button type="submit" variant="contained" color="primary">Save</Button>
+        </Container>
     );
 }
